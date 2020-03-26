@@ -9,7 +9,6 @@ var config = {
 
     src: {
         root         : 'src',
-        pagelist     : 'src/pages.yaml',
         templates    : 'src/*.html',
         sass         : 'src/sass',
         // path for sass files that will be generated automatically via some of tasks

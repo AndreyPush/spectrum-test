@@ -12,7 +12,6 @@ function build(cb) {
         'sass',
         'webpack',
         'copy',
-        'list-pages',
         cb
     );
 }
