@@ -1,0 +1,490 @@
+@import "generated/sprite-svg"
+@import "generated/sprite-png"
+@import "bourbon/bourbon"
+@import "_reset"
+@import "_variables.sass"
+@import "_mixins"
+@import '_fonts'
+@import "_base"
+@import "_tpl-selectors"
+
+
+.login
+	background: linear-gradient(0deg, #067EFF, #067EFF)
+	position: relative
+	width: 100%
+	height: 100vh
+	display: flex
+	align-items: center
+	justify-content: center
+	&_form
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		flex-direction: column
+		background: #ffffff
+		border: 1px solid #409CFF
+		box-sizing: border-box
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		border-radius: 8px
+		width: 100%
+		max-width: 460px
+		padding: 30px 15px 35px
+		&_submit
+			@extend %yellow-submit
+			margin-top: 47px
+			display: block
+			width: 192px
+			height: 49px
+	&_head
+		display: block
+		font-family: sans-serif
+		font-weight: 700
+		color: #409CFF
+		font-size: 24px
+		line-height: 30px
+		letter-spacing: 0.3px
+	&_inputBlock
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-top: 18px
+		flex-shrink: 0
+		width: 100%
+		max-width: 307px
+		&:not(:first-of-type)
+			margin-top: 28px
+		&_title
+			display: block
+			font-size: 18px
+			line-height: 23px
+			letter-spacing: 0.3px
+			color: #000
+			font-weight: 600
+		&_input
+			@extend %gray-input
+			display: block
+			margin-top: 9px
+			height: 50px
+			font-size: 24px
+
+
+.dashboard
+	position: relative
+	background: #F7F8FC
+	display: flex
+	min-height: 100vh
+	&_aside
+		height: auto
+		background: #067EFF
+		min-width: 215px
+		display: flex
+		flex-direction: column
+		align-items: center
+		+cl
+		&_logo
+			display: block
+			margin: 41px auto 0
+			font-family: sans-serif
+			font-weight: 700
+			font-size: 19px
+			line-height: 24px
+			letter-spacing: 0.4px
+			color: #ffffff
+		&_menu
+			margin-top: 63px
+			width: 100%
+			&_list
+				display: block
+			&_item
+				display: block
+				background-color: transparent
+				border-left: 3px solid transparent
+				transition: $trs
+				&--active
+					background-color: #FFD306
+					border-left: 3px solid #000
+
+			&_lnk
+				display: block
+				padding: 18px 27px
+				font-family: sans-serif
+				font-weight: 700
+				font-size: 16px
+				line-height: 20px
+				letter-spacing: 0.2px
+				color: #ffffff
+				cursor: pointer
+				&--active
+					color: #000
+	&_container
+		padding: 25px 15px
+		flex: 1
+	&_doReport
+		background: #ffffff
+		border: 1px solid #dfe0eb
+		border-radius: 8px
+		padding: 23px 15px 47px
+		&_head
+			@extend %dashboard-head
+		&_form
+			display: flex
+			margin-top: 21px
+			&_col
+				max-width: 265px
+				width: 100%
+				display: flex
+				flex-direction: column
+				justify-content: flex-end
+				&:not(:first-of-type)
+					margin-left: 30px
+			&_title
+				display: block
+				font-family: sans-serif
+				font-weight: 700
+				font-size: 14px
+				line-height: 18px
+				letter-spacing: 0.3px
+				color: #000
+				margin-bottom: 7px
+			&_input
+				@extend %gray-input
+				display: block
+				width: 100%
+				height: 40px
+				font-size: 18px
+				&--incorrect
+					border: 2px solid red
+			&_selectBlock
+				position: relative
+				border: 2px solid #cecece
+				border-radius: 10px
+				width: 100%
+				display: block
+				height: 40px
+				cursor: pointer
+				&::after
+					content: ''
+					position: absolute
+					width: 20px
+					height: 15px
+					top: 50%
+					transform: translateY(-50%)
+					background: url("../img/select-arrow.svg") no-repeat top center/100%
+					right: 13px
+				&_value
+					display: flex
+					align-items: center
+					width: 100%
+					height: 100%
+					padding: 0 15px
+					font-family: sans-serif
+					font-size: 18px
+					font-weight: 400
+					letter-spacing: 0.3px
+					color: #000
+					position: relative
+					z-index: 2
+			&_select
+				position: absolute
+				top: 100%
+				left: -2px
+				right: -2px
+				padding: 10px 5px
+				background: #ffffff
+				border: 2px solid #cecece
+					top: 0px solid transparent
+				margin-top: -6px
+				border-radius: 0 0 10px 10px
+				&_item
+					display: block
+					width: 100%
+					padding: 10px
+					font-size: 18px
+					font-weight: 700
+					color: #000
+					font-family: sans-serif
+					cursor: pointer
+					background: transparent
+					&:hover
+						background: darken(#fff, 15%)
+			&_submit
+				display: block
+				width: 169px
+				height: 40px
+				@extend %yellow-submit
+				&--disabled
+					cursor: not-allowed
+					background: #cecece
+					color: lighten(#000, 30%)
+					&:hover
+						background: #cecece
+						color: lighten(#000, 30%)
+	&_list
+		margin-top: 25px
+		background: #ffffff
+		border: 1px solid #dfe0eb
+		border-radius: 8px
+		padding: 23px 15px 47px
+		&_head
+			@extend %dashboard-head
+		&_block
+			margin: 19px -15px 0
+		&_col
+			flex: 1
+			width: 100%
+			padding: 0 15px
+			display: flex
+			&:nth-of-type(1)
+				max-width: 33.47%
+			&:nth-of-type(2)
+				max-width: 20.95%
+			&:nth-of-type(3)
+				max-width: 15.06%
+			&:nth-of-type(4)
+				max-width: 120px
+			&:nth-of-type(5)
+				justify-content: center
+		&_row
+			display: flex
+			padding: 15px 0
+			border-bottom: 1px solid #dfe0eb
+		&_ahead
+			display: flex
+			&_title
+				display: block
+				font-family: sans-serif
+				font-weight: 700
+				font-size: 14px
+				line-height: 18px
+				letter-spacing: 0.2px
+				color: #000000
+		&_body
+			margin-top: 15px
+			border-top: 1px solid #dfe0eb
+			&_text
+				display: block
+				font-family: sans-serif
+				font-weight: 400
+				font-size: 14px
+				line-height: 20px
+				letter-spacing: 0.2px
+				color: #252733
+			&_status
+				display: flex
+				justify-content: center
+				align-items: center
+				width: 90px
+				height: 24px
+				border-radius: 12px
+				background-color: transparent
+				font-family: sans-serif
+				font-weight: 700
+				font-size: 11px
+				text-transform: uppercase
+				letter-spacing: 0.5px
+				color: #ffffff
+				&--error
+					background: #F12B2C
+				&--progress
+					background: #F1A22B
+				&--done
+					background: #29CC97
+			&_del
+				display: flex
+				justify-content: center
+				padding: 3px 5px
+				cursor: pointer
+				background: transparent
+				border: none
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
